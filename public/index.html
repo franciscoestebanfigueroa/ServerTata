@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="data"></p>
     <script src="https://servertata.onrender.com/socket.io/socket.io.js"></script>
 <script>
 var socket=io();
 
 socket.on('connect',function(){
-
+    
     console.log('conectado con server');
 });
 socket.on('desconnect',function(){
@@ -20,6 +21,9 @@ socket.on('desconnect',function(){
 socket.on('mensajex',function(data){
     console.log('estado',data.estado);
     console.log('nombre',data.nombre);
+    
+    document.getElementById("data").textContent='Nombre: '+data.nombre;
+    document.getElementById("data").textContent='Estado: '+data.estado;
 });
 </script>
 
