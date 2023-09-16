@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="data"></p>
+    <p id="dataN"></p>
+    <p id="dataE"></p>
     <script src="https://servertata.onrender.com/socket.io/socket.io.js"></script>
 <script>
 var socket=io();
@@ -22,8 +23,8 @@ socket.on('mensajex',function(data){
     console.log('estado',data.estado);
     console.log('nombre',data.nombre);
     
-    document.getElementById("data").textContent='Nombre: '+data.nombre;
-    document.getElementById("data").textContent='Estado: '+data.estado;
+    document.getElementById("dataN").textContent='Nombre: '+data.nombre;
+    document.getElementById("dataE").textContent='Estado: '+data.estado;
 });
 </script>
 
