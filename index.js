@@ -1,10 +1,15 @@
 const express = require('express');
 const app=express();
-const http = require('http');
+const https = require('https');
+const fs = require('fs');
 
+const httpsOptions = {
+  //key: fs.readFileSync('ruta/a/la/clave-privada.pem'),
+  //cert: fs.readFileSync('ruta/al/certificado-ssl.pem')
+};
 const dotenv = require('dotenv').config(); 
 
-const server = http.createServer(app);//correcion
+const server = https.createServer(app);//correcion
 
 const socketIO = require('socket.io');
 
